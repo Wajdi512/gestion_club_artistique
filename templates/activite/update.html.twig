@@ -2,21 +2,16 @@
 {% block title %}Gestion coachs{% endblock %}
 {% block body %}
     {% include 'menu.html.twig' %}
-    </div>
     <div class="container">
-        <h2> Modifier coach: </h2>
+        <h2> Modifier activité: </h2>
         {{ form_start(form) }}
-        {{ form_label(form.nom, null, {
-            'label': 'Nom: ',
+        {{ form_label(form.libAct, null, {
+            'label': 'Libellé activité: ',
         }) }}
-        {{ form_widget(form.nom) }}
-        {{ form_label(form.prenom, null, {
-            'label': 'Prénom: ',
-        }) }}
-        {{ form_widget(form.prenom) }}
+        {{ form_widget(form.libAct) }}
         <button type="submit" class="btn btn-success">Modifier</button>
         {{ form_end(form) }}
-        <hr>
+
         {% if message %}
             <div class="alert alert-success" role="alert">
                 {{ message }}

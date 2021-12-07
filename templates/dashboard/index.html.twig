@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Les séances{% endblock %}
+{% block body %}
+
+    {% include 'menu.html.twig' %}
+
+    <div class="container">
+        <hr>
+        <div align="center">
+            <h2>
+                Les séances
+            </h2>
+        </div>
+        <div class="row">
+
+        {% for seance in lesSeances %}
+            <div class="col-sm-3 card" style="margin: 10px; background-color: #f1f2f3" >
+                <span style="height:30px;margin-right: -13px;margin-left: -13px;align-content:center; background-color: aliceblue; border-bottom: black solid">
+                    <span style="font-weight: bold">Actvité:</span> {{ seance.activite.libAct }}
+                </span>
+                <div class="card-body">
+                    <table class=".table">
+                        <tr>
+                            <td style="font-weight: bold">Coach:</td>
+                            <td>{{ seance.coach.nom }} {{ seance.coach.prenom }}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Heure de début:</td>
+                            <td> {{ seance.heureDebut |  date('d-m-Y H:i') }}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Heure de fin:</td>
+                            <td> {{ seance.heureFin |  date('d-m-Y H:i') }}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            {# <div class="panel panel-success col-sm-4"> #}
+            {# <div class="panel-heading">Activité: {{ seance.activite.libAct }}</div> #}
+            {# <div class="panel-body"> #}
+            {# <table class="table"> #}
+            {# <tr> #}
+            {# <td>Coach</td> #}
+            {# <td>{{ seance.coach.nom }} {{ seance.coach.prenom }}</td> #}
+            {# </tr> #}
+            {# <tr> #}
+            {# <td>Heure de début</td> #}
+            {# <td> {{ seance.heureDebut |  date('d-m-Y H:i') }}</td> #}
+            {# </tr> #}
+            {# <tr> #}
+            {# <td>Heure de fin</td> #}
+            {# <td> {{ seance.heureFin |  date('d-m-Y H:i') }}</td> #}
+            {# </tr> #}
+
+            {# </table> #}
+            {# </div> #}
+            {# </div> #}
+
+        {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

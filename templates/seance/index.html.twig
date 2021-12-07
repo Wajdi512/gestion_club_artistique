@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+{% block title %}Les séances{% endblock %}
+{% block body %}
+
+    {% include 'menu.html.twig' %}
+
+    <div class="container">
+        {% if is_granted('ROLE_ADMIN') %}
+
+            <h2> Ajout séance </h2>
+            {{ form_start(form) }}
+            {{ form_label(form.heureDebut, null, {
+                'label': 'Heure de début: ',
+            }) }}
+            {{ form_widget(form.heureDebut) }}
+
+            {{ form_label(form.heureFin, null, {
+                'label': 'Heure de Fin: ',
+            }) }}
+            {{ form_widget(form.heureFin) }}
+
+            {{ form_label(form.coach, null, {
+                'label': 'Coach: ',
+            }) }}
+            {{ form_widget(form.coach) }}
+
+            {{ form_label(form.activite, null, {
+                'label': 'Activité: ',
+            }) }}
+            {{ form_widget(form.activite) }}
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            {{ form_end(form) }}
+        {% endif %}
+        <hr>
+        <h2>
+            Les séances:
+        </h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Activité</th>
+                <th scope="col">Heure de début</th>
+                <th scope="col">Heure de fin</th>
+                <th scope="col">Status</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th scope="col">Actions</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for seance in lesSeances %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ seance.coach.nom }}</td>
+                    <td>{{ seance.coach.prenom }}</td>
+                    <td>{{ seance.activite.libAct }}</td>
+                    <td>{{ seance.heureDebut |  date('d-m-Y H:i') }}</td>
+                    <td>{{ seance.heureFin | date('d-m-Y H:i') }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            <a class="btn btn-primary">
+                                Modifier
+                            </a>
+                            <a class="btn btn-danger"
+                               href="/activite/delete/activite/{{ seance.activite.id }}/coach/{{ seance.coach.id }}"
+                               onclick="return confirm('Etesvous sûr de supprimer cette séance?');">
+                                Supprimer
+                            </a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

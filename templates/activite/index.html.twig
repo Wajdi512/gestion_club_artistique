@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter Activite{% endblock %}
+{% block body %}
+    {% include 'menu.html.twig' %}
+    </div>
+
+    <div class="container">
+        <h2> Ajouter une activité: </h2>
+        {{ form_start(form) }}
+        {{ form_label(form.libAct, null, {
+            'label': 'Libellé activité: ',
+        }) }}
+        {{ form_widget(form.libAct) }}
+        <button type="submit" class="btn btn-success">Ajouter</button>
+        {{ form_end(form) }}
+        <hr>
+        <h2>
+            Les activités
+        </h2>
+        {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Code activité</th>
+                <th scope="col">Libellé activité</th>
+                <th scope="col">Actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for act in lesActivites %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ act.id }}</td>
+                    <td>{{ act.libAct }}</td>
+                    <td>
+                        <a href="/activite/edit/{{ act.id }}" class="btn btn-primary">
+                            Modifier
+                        </a>
+                        <a href="/activite/delete/{{ act.id }}" class="btn btn-danger"
+                           onclick="return confirm('Etesvous sûr de supprimer cette activité?');">
+                            Supprimer
+                        </a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

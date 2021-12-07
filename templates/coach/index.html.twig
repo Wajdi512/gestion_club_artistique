@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gestion coachs{% endblock %}
+{% block body %}
+    {% include 'menu.html.twig' %}
+    </div>
+
+    <div class="container">
+        <h2> Ajouter un coach: </h2>
+        {{ form_start(form) }}
+        {{ form_label(form.nom, null, {
+            'label': 'Nom: ',
+        }) }}
+        {{ form_widget(form.nom) }}
+        {{ form_label(form.prenom, null, {
+            'label': 'Prénom: ',
+        }) }}
+        {{ form_widget(form.prenom) }}
+        <button type="submit" class="btn btn-success">Ajouter</button>
+        {{ form_end(form) }}
+        <hr>
+        <h2>
+            Les coachs
+        </h2>
+        {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Code coach</th>
+                <th scope="col">nom</th>
+                <th scope="col">prénom</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for coach in lesCoachs %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ coach.id }}</td>
+                    <td>{{ coach.nom }}</td>
+                    <td>{{ coach.prenom }}</td>
+                    <td>
+                        <a href="/coach/edit/{{ coach.id }}" class="btn btn-primary">
+                            Modifier
+                        </a>
+                        <a href="/coach/delete/{{ coach.id }}" class="btn btn-danger"
+                           onclick="return confirm('Etesvous sûr de supprimer ce coach?');">
+                            Supprimer
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
