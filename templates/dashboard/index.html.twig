@@ -11,54 +11,69 @@
                 Les séances
             </h2>
         </div>
-        <div class="row">
+        <div class="input-group">
+            <form action="/search">
+                <div class="row">
 
-        {% for seance in lesSeances %}
-            <div class="col-sm-3 card" style="margin: 10px; background-color: #f1f2f3" >
+                    <div class="col">
+                        Activité:
+                        <select class="form-select" style="margin: 10px;" name="activiteId">
+                            <option value="0" selected>Choisir une activié</option>
+                            {% for activite in lesActivites %}
+                                <option value="{{ activite.id }}">{{ activite.libAct }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col">
+                        Coach:
+                        <select class="form-select" style="margin: 10px;" name="coachId">
+                            <option value="0" selected>Choisir un coach</option>
+                            {% for coach in lesCoachs %}
+                                <option value="{{ coach.id }}">{{ coach.nom }} {{ coach.prenom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div style="alig: center">
+                    <input class="btn btn-success" type="submit" value="Rechercher">
+                </div>
+            </form>
+        </div>
+
+
+        <div class="row">
+            {% if lesSeances is empty %}
+                <div style="margin: 20px; font-weight: bold">
+                    <hr>
+                    Aucune séance à afficher !
+                </div>
+            {% endif %}
+
+            {% for seance in lesSeances %}
+                <div class="col-sm-3 card" style="margin: 10px; background-color: #f1f2f3">
                 <span style="height:30px;margin-right: -13px;margin-left: -13px;align-content:center; background-color: aliceblue; border-bottom: black solid">
                     <span style="font-weight: bold">Actvité:</span> {{ seance.activite.libAct }}
                 </span>
-                <div class="card-body">
-                    <table class=".table">
-                        <tr>
-                            <td style="font-weight: bold">Coach:</td>
-                            <td>{{ seance.coach.nom }} {{ seance.coach.prenom }}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold">Heure de début:</td>
-                            <td> {{ seance.heureDebut |  date('d-m-Y H:i') }}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold">Heure de fin:</td>
-                            <td> {{ seance.heureFin |  date('d-m-Y H:i') }}</td>
-                        </tr>
+                    <div class="card-body">
+                        <table class=".table">
+                            <tr>
+                                <td style="font-weight: bold">Coach:</td>
+                                <td>{{ seance.coach.nom }} {{ seance.coach.prenom }}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">Heure de début:</td>
+                                <td> {{ seance.heureDebut |  date('d-m-Y H:i') }}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">Heure de fin:</td>
+                                <td> {{ seance.heureFin |  date('d-m-Y H:i') }}</td>
+                            </tr>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
-            {# <div class="panel panel-success col-sm-4"> #}
-            {# <div class="panel-heading">Activité: {{ seance.activite.libAct }}</div> #}
-            {# <div class="panel-body"> #}
-            {# <table class="table"> #}
-            {# <tr> #}
-            {# <td>Coach</td> #}
-            {# <td>{{ seance.coach.nom }} {{ seance.coach.prenom }}</td> #}
-            {# </tr> #}
-            {# <tr> #}
-            {# <td>Heure de début</td> #}
-            {# <td> {{ seance.heureDebut |  date('d-m-Y H:i') }}</td> #}
-            {# </tr> #}
-            {# <tr> #}
-            {# <td>Heure de fin</td> #}
-            {# <td> {{ seance.heureFin |  date('d-m-Y H:i') }}</td> #}
-            {# </tr> #}
-
-            {# </table> #}
-            {# </div> #}
-            {# </div> #}
-
-        {% endfor %}
+            {% endfor %}
         </div>
 
     </div>

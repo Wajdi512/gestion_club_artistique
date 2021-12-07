@@ -3,19 +3,25 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon">
+            </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="logo">
+                <a href="/">
+                    Club Artistique
+                </a>
+            </div>
             <ul class="navbar-nav ms-auto">
                 {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('ajout_caoch') }}">Coachs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('ajout_activite') }}">Activite</a>
+                        <a class="nav-link" href="{{ path('ajout_activite') }}">Les Activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('ajout_seance') }}">Seance</a>
+                        <a class="nav-link" href="{{ path('ajout_seance') }}">Les séances</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Log out</a>

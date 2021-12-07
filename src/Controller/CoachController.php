@@ -19,6 +19,7 @@ class CoachController extends AbstractController
      */
     public function index(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $message = "";
         $succesDelete = $request->query->get("succesDelete");
         if ($succesDelete != null && $succesDelete == "1") {
@@ -50,6 +51,7 @@ class CoachController extends AbstractController
      */
     public function deleteCoach(Request $request, $id): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $entityManager = $this->getDoctrine()->getManager();
         $repo = $entityManager->getRepository(Coach::class);
         $coach = $repo->find($id);
@@ -66,6 +68,7 @@ class CoachController extends AbstractController
      */
     public function edit(Request $request, $id): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $message = "";
         $entityManager = $this->getDoctrine()->getManager();
         $repo = $entityManager->getRepository(Coach::class);

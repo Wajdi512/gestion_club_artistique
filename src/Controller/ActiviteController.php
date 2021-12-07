@@ -20,6 +20,7 @@ class ActiviteController extends AbstractController
      */
     public function ajoutActivite(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $message = "";
         $succesDelete = $request->query->get("succesDelete");
         if ($succesDelete != null && $succesDelete == "1") {
@@ -50,6 +51,7 @@ class ActiviteController extends AbstractController
      */
     public function deleteActivite(Request $request, $id): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $entityManager = $this->getDoctrine()->getManager();
         $repo = $entityManager->getRepository(Activite::class);
         $activite = $repo->find($id);
@@ -64,6 +66,7 @@ class ActiviteController extends AbstractController
      */
     public function edit(Request $request, $id): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $message = "";
         $entityManager = $this->getDoctrine()->getManager();
         $repo = $entityManager->getRepository(Activite::class);

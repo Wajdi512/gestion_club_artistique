@@ -61,11 +61,11 @@
                     <td>{{ seance.heureFin | date('d-m-Y H:i') }}</td>
                     {% if is_granted('ROLE_ADMIN') %}
                         <td>
-                            <a class="btn btn-primary">
+                            <a class="btn btn-primary" href="/seance/edit/{{ seance.id }}">
                                 Modifier
                             </a>
                             <a class="btn btn-danger"
-                               href="/activite/delete/activite/{{ seance.activite.id }}/coach/{{ seance.coach.id }}"
+                               href="/activite/delete/seance/{{ seance.id }}"
                                onclick="return confirm('Etesvous sûr de supprimer cette séance?');">
                                 Supprimer
                             </a>

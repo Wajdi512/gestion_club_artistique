@@ -11,17 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a128f86-6c9c-42e1-becb-aafef9b01331" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/seance/update.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ActiviteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ActiviteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CoachController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoachController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SeanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/activite/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activite/update.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coach/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coach/update.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/seance/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seance/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,12 +184,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/activite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/seance" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\studies\symfony\gestion_club_artistique\templates\seance" />
       <recent name="C:\studies\symfony\gestion_club_artistique\templates\activite" />
       <recent name="C:\studies\symfony\gestion_club_artistique\translations" />
     </key>
@@ -221,6 +224,7 @@
       <workItem from="1638653919136" duration="7437000" />
       <workItem from="1638697103853" duration="24099000" />
       <workItem from="1638824040174" duration="7297000" />
+      <workItem from="1638904541347" duration="8158000" />
     </task>
     <servers />
   </component>
@@ -248,10 +252,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="284" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638660684698" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1638825362226">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1638915117499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638711909413" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.-226.1920.1040@0.0.1366.728" timestamp="1638915117499" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1638825362226" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1638831488878">
       <screen x="0" y="0" width="1366" height="728" />
@@ -269,10 +274,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/-1920.-174.1920.1040@0.0.1366.728" timestamp="1638831488878" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1638656322147">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1638914753401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638656322147" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.-226.1920.1040@0.0.1366.728" timestamp="1638914753401" />
     <state x="1480" y="128" width="1339" height="508" maximized="true" key="dock-window-1" timestamp="1638824665487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -285,10 +291,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638728266101" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1638701765186">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1638915399739">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638701765186" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.-226.1920.1040@0.0.1366.728" timestamp="1638915399739" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1638828605440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

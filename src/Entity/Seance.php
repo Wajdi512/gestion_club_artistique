@@ -12,6 +12,14 @@ class Seance
 {
 
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $heureDebut;
@@ -22,14 +30,12 @@ class Seance
     private $heureFin;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Coach::class, inversedBy="seances")
      * @ORM\JoinColumn(name="coach_id", referencedColumnName="codeCo", nullable=false)
      */
     private $coach;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Activite::class, inversedBy="seances")
      * @ORM\JoinColumn(name="activite_id", referencedColumnName="codeAct", nullable=false)
      */
@@ -51,6 +57,10 @@ class Seance
         $this->activite = $activite;
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getHeureDebut(): ?\DateTimeInterface
     {

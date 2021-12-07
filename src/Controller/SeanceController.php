@@ -20,6 +20,7 @@ class SeanceController extends AbstractController
      */
     public function index(Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $entityManager = $this->getDoctrine()->getManager();
         $coachs = $entityManager->getRepository(Coach::class)->findAll();
         $activites = $entityManager->getRepository(Activite::class)->findAll();
@@ -40,17 +41,44 @@ class SeanceController extends AbstractController
     }
 
     /**
-     * @Route("/activite/delete/activite/{idAct}/coach/{idCoach}", name="supprimer_activite")
+     * @Route("/activite/delete/seance/{idSeance}", name="supprimer_activite")
      * Method({"GET", "DELETE"})
      */
-    public function deleteSeance(Request $request, $idAct,$idCoach): Response
+    public function deleteSeance(Request $request, $idSeance): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $entityManager = $this->getDoctrine()->getManager();
         $repo = $entityManager->getRepository(Seance::class);
-        $seance = $repo->find(['activite' => $idAct, 'coach' => $idCoach]);
+        $seance = $repo->find($idSeance);
         $entityManager->remove($seance);
         $entityManager->flush();
         return $this->redirectToRoute('ajout_seance', ['succesDelete' => '1']);
+    }
+
+
+    /**
+     * @Route("/seance/edit/{id}", name="edit_seance")
+     * Method({"GET", "POST"})
+     */
+    public function edit(Request $request, $id): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $message = "";
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo = $entityManager->getRepository(Seance::class);
+        $seance = $repo->find($id);
+        $form = $this->createForm(SeanceType::class, $seance);
+        $form->handleRequest($request);
+        if ($seance != null && $form->isSubmitted() && $form->isValid()) {
+            $message = 'Seance modifié avec succés';
+            $seance = $form->getData();
+            $entityManager->persist($seance);
+            $entityManager->flush();
+        }
+        return $this->render('seance/update.html.twig', [
+            'form' => $form->createView(),
+            'message' => $message
+        ]);
     }
 
 

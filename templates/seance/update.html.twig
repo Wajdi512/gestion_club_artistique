@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier seance{% endblock %}
+{% block body %}
+    {% include 'menu.html.twig' %}
+
+    <div class="container">
+        {% if is_granted('ROLE_ADMIN') %}
+
+            <h2> Ajout séance </h2>
+            {{ form_start(form) }}
+            {{ form_label(form.heureDebut, null, {
+                'label': 'Heure de début: ',
+            }) }}
+            {{ form_widget(form.heureDebut) }}
+
+            {{ form_label(form.heureFin, null, {
+                'label': 'Heure de Fin: ',
+            }) }}
+            {{ form_widget(form.heureFin) }}
+
+            {{ form_label(form.coach, null, {
+                'label': 'Coach: ',
+            }) }}
+            {{ form_widget(form.coach) }}
+
+            {{ form_label(form.activite, null, {
+                'label': 'Activité: ',
+            }) }}
+            {{ form_widget(form.activite) }}
+            <button type="submit" class="btn btn-success">Sauvegarder</button>
+            {{ form_end(form) }}
+
+            {% if message %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+        {% endif %}
+    </div>
+{% endblock %}
