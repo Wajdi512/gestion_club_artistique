@@ -41,7 +41,7 @@ class SeanceController extends AbstractController
     }
 
     /**
-     * @Route("/activite/delete/seance/{idSeance}", name="supprimer_activite")
+     * @Route("/activite/delete/seance/{idSeance}", name="supprimer_seance")
      * Method({"GET", "DELETE"})
      */
     public function deleteSeance(Request $request, $idSeance): Response

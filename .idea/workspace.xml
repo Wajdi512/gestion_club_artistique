@@ -11,18 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a128f86-6c9c-42e1-becb-aafef9b01331" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/seance/update.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ActiviteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ActiviteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CoachController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoachController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SeanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Seance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Seance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/activite/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activite/update.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coach/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coach/update.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/seance/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/seance/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +215,7 @@
       <workItem from="1638653919136" duration="7437000" />
       <workItem from="1638697103853" duration="24099000" />
       <workItem from="1638824040174" duration="7297000" />
-      <workItem from="1638904541347" duration="8158000" />
+      <workItem from="1638904541347" duration="8720000" />
     </task>
     <servers />
   </component>
@@ -279,10 +270,11 @@
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638656322147" />
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.-226.1920.1040@0.0.1366.728" timestamp="1638914753401" />
-    <state x="1480" y="128" width="1339" height="508" maximized="true" key="dock-window-1" timestamp="1638824665487">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1771" y="-149" width="1034" height="715" key="dock-window-1" timestamp="1638917294708">
+      <screen x="1366" y="-226" width="1920" height="1040" />
     </state>
     <state x="1480" y="128" width="1339" height="508" maximized="true" key="dock-window-1/0.0.1366.728/1366.-209.1920.1040@0.0.1366.728" timestamp="1638728297434" />
+    <state x="1771" y="-149" width="1034" height="715" key="dock-window-1/0.0.1366.728/1366.-226.1920.1040@0.0.1366.728" timestamp="1638917294708" />
     <state x="1640" y="-5" width="1052" height="593" maximized="true" key="dock-window-2" timestamp="1638824665487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
